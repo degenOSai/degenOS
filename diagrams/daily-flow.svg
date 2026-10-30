@@ -1,6 +1,6 @@
 <svg viewBox="0 0 920 640" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Helvetica, Arial, sans-serif">
   <rect width="920" height="640" fill="#0e1420"/>
-  <text x="460" y="40" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">A Day &amp; Week in BrainOS</text>
+  <text x="460" y="40" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">A Day &amp; Week in degenOS</text>
   <text x="460" y="64" fill="#5ec1ff" font-size="13" text-anchor="middle">Everything runs on a schedule. You just act on what arrives.</text>
 
   <!-- vertical timeline spine -->
