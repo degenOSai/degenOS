@@ -1,10 +1,10 @@
-# 🧠 BrainOS
+# 🧠 degenOS
 
 **A personal operating system: one knowledge core, one interface agent, and two domain agents — that you run from your phone.**
 
-BrainOS watches your real inputs (email, calendar, messages, research) and turns them into ranked daily actions, ready-to-send drafts, and gentle reminders — then learns from what you actually do. No SaaS subscriptions, no servers. It runs on your own Mac and talks to you through Telegram.
+degenOS watches your real inputs (email, calendar, messages, research) and turns them into ranked daily actions, ready-to-send drafts, and gentle reminders — then learns from what you actually do. No SaaS subscriptions, no servers. It runs on your own Mac and talks to you through Telegram.
 
-> Built by Nick Marton as a personal command center. This repo is the **public overview** — the operational code and personal data live in private repos.
+> Built as a personal command center. This repo is the **public overview** — the operational code and personal data live in private repos.
 
 ---
 
@@ -12,13 +12,13 @@ BrainOS watches your real inputs (email, calendar, messages, research) and turns
 
 ![System architecture](diagrams/architecture.svg)
 
-*BrainOS is the OS and the knowledge core. Grace is how you talk to it. LifeBot and BizBot are the two domain agents. Everything runs automatically on your Mac; you interact through Telegram.*
+*degenOS is the OS and the knowledge core. Grace is how you talk to it. LifeBot and BizBot are the two domain agents. Everything runs automatically on your Mac; you interact through Telegram.*
 
 ### The hierarchy
 
 | # | Component | Role |
 |---|---|---|
-| 1 | 🧠 **BrainOS** | **The OS.** The knowledge core and daily orchestrator — captures ideas and research, finds connections, drafts content, and runs the routine that produces your daily dashboard. Lives in an Obsidian vault. |
+| 1 | 🧠 **degenOS** | **The OS.** The knowledge core and daily orchestrator — captures ideas and research, finds connections, drafts content, and runs the routine that produces your daily dashboard. Lives in an Obsidian vault. |
 | 2 | 📱 **Grace** | **The interface.** The Telegram agent you talk to — asks you one-tap questions, takes commands by text, sends notifications. |
 | 3 | 🌙 **LifeBot** | **Life agent.** Triages your inboxes, manages your calendar, maintains a personal CRM of the people in your life, and protects your time. |
 | 4 | 💼 **BizBot** | **Business agent.** Runs your outreach CRM, ranks who to contact, writes personalized drafts, tracks what gets replies. |
@@ -29,7 +29,7 @@ BrainOS watches your real inputs (email, calendar, messages, research) and turns
 
 ![Daily and weekly flow](diagrams/daily-flow.svg)
 
-*You don't "use" BrainOS so much as receive it. The schedule does the work; you act on what arrives and answer the occasional question from Grace.*
+*You don't "use" degenOS so much as receive it. The schedule does the work; you act on what arrives and answer the occasional question from Grace.*
 
 **Your entire daily involvement:** read the morning dashboard (or listen to the voice note), work the top actions by copy-pasting drafts, glance at the evening brief, and reply to Grace when she asks something. ~10 minutes of decisions; the system does the rest.
 
@@ -45,7 +45,7 @@ BrainOS watches your real inputs (email, calendar, messages, research) and turns
 
 ## The two-minute pitch
 
-Most "AI assistants" are a chat box you have to remember to open. BrainOS is the opposite: it's **always running, acts in the tools you already use, and only interrupts you when it needs a decision.** It drafts the email and leaves it in your Drafts folder. It schedules the reminder and it fires at the right moment. It notices you've lost touch with a friend and hands you an opener. It asks "did this deal move?" and files your answer in the right place automatically.
+Most "AI assistants" are a chat box you have to remember to open. degenOS is the opposite: it's **always running, acts in the tools you already use, and only interrupts you when it needs a decision.** It drafts the email and leaves it in your Drafts folder. It schedules the reminder and it fires at the right moment. It notices you've lost touch with a friend and hands you an opener. It asks "did this deal move?" and files your answer in the right place automatically.
 
 It's split into a core plus specialized agents because **knowledge, life, and business are different jobs** — but they share context, so a news item the core saved this morning can sharpen a sales message this afternoon.
 
@@ -69,4 +69,4 @@ It's split into a core plus specialized agents because **knowledge, life, and bu
 
 ---
 
-*BrainOS is a personal project. The overview here is shared to show the architecture and ideas; the operational code and all personal data are private.*
+*degenOS is a personal project. The overview here is shared to show the architecture and ideas; the operational code and all personal data are private.*

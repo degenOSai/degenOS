@@ -1,8 +1,8 @@
-# 📘 BrainOS Quickstart
+# 📘 degenOS Quickstart
 
 Everything you need to run your day. One page. Pin it.
 
-**The hierarchy:** 🧠 **BrainOS** (the OS / knowledge core) → 📱 **Grace** (your interface) → 🌙 **LifeBot** (life) → 💼 **BizBot** (business).
+**The hierarchy:** 🧠 **degenOS** (the OS / knowledge core) → 📱 **Grace** (your interface) → 🌙 **LifeBot** (life) → 💼 **BizBot** (business).
 
 ---
 
@@ -10,7 +10,7 @@ Everything you need to run your day. One page. Pin it.
 
 | When | What arrives | What you do |
 |---|---|---|
-| **7:45 AM** | **Morning dashboard** (from BrainOS) — email + Telegram digest + voice note | Skim the **Top 10 actions**. Each one with a draft has the full text in an expandable block — tap, copy, paste, send. |
+| **7:45 AM** | **Morning dashboard** (from degenOS) — email + Telegram digest + voice note | Skim the **Top 10 actions**. Each one with a draft has the full text in an expandable block — tap, copy, paste, send. |
 | **All day** | **Reminders** ping at the right time; **Grace** may ask a question | Act on reminders. Reply to Grace's questions in-thread — she files your answer automatically. |
 | **8:00 PM** | **Evening brief** (from LifeBot) — inbox triage, reply drafts in Gmail, tomorrow's prep, people to reconnect with | Sweep your Gmail Drafts folder (replies are pre-written). Confirm any calendar suggestions. |
 
@@ -26,7 +26,7 @@ Just text her naturally. She handles:
 |---|---|
 | `remind me at 4pm to call the lawyer` | Schedules a phone reminder (natural phrasing — no format needed) |
 | `remind me tomorrow 9am to review the deck` | Same, for tomorrow |
-| `capture: idea for a new product line` | Files it into BrainOS (your knowledge core) |
+| `capture: idea for a new product line` | Files it into degenOS (your knowledge core) |
 | `decision: held the offer at X because Y` | Logs a judgment call to your decision history |
 | `skip gym today` | Removes today's gym block (without penalizing the habit) |
 | `discrete 3h` | Voice briefs go business-only for 3 hours (for when others are around) |
@@ -54,7 +54,7 @@ If she can't parse something, she says "noted — next run will handle it" and a
 - `wellness` (LifeBot) — your habit/time-block scoreboard
 - `telegram-scan` (LifeBot) — pull alpha/news from your channels
 - `social-checkin` (LifeBot) — refresh contacts from LinkedIn/Facebook
-- `auto-research [topic]` (BrainOS) — deep-dive a question
+- `auto-research [topic]` (degenOS) — deep-dive a question
 
 ---
 
