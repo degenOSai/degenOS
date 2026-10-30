@@ -69,4 +69,10 @@ It's split into a core plus specialized agents because **knowledge, life, and bu
 
 ---
 
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE) for the full text.
+
+---
+
 *degenOS is a personal project. The overview here is shared to show the architecture and ideas; the operational code and all personal data are private.*
