@@ -1,14 +1,14 @@
-# 📗 BrainOS Full Manual
+# 📗 degenOS Full Manual
 
 The complete reference: the system, every command, when and why to use it, how it works under the hood, and how to fix things. For the one-page version, see the [Quickstart](quickstart.md).
 
-**The hierarchy:** 🧠 **BrainOS** (the OS / knowledge core + orchestrator) → 📱 **Grace** (interface) → 🌙 **LifeBot** (life) → 💼 **BizBot** (business).
+**The hierarchy:** 🧠 **degenOS** (the OS / knowledge core + orchestrator) → 📱 **Grace** (interface) → 🌙 **LifeBot** (life) → 💼 **BizBot** (business).
 
 ---
 
 ## Contents
 1. [How it's built](#how-its-built)
-2. [BrainOS — the OS & knowledge core](#brainos)
+2. [degenOS — the OS & knowledge core](#degenos)
 3. [Grace — the interface agent](#grace)
 4. [LifeBot & BizBot — the domain agents](#the-domain-agents)
 5. [Command reference](#command-reference)
@@ -22,21 +22,21 @@ The complete reference: the system, every command, when and why to use it, how i
 
 ## How it's built
 
-BrainOS is **plain scripts + scheduled jobs + an LLM**, deliberately boring infrastructure:
+degenOS is **plain scripts + scheduled jobs + an LLM**, deliberately boring infrastructure:
 
 - **Project folders**, one per component, each with a `CLAUDE.md` (its standing instructions), command prompts, and helper scripts.
 - **A schema-constants file** in each project is the single source of truth for data layout — nothing hardcodes column letters or IDs elsewhere.
 - **Scheduled jobs** (macOS `launchd`) fire the routines at set times. A deterministic Python layer handles anything that must be reliable (scheduling, calendar, reminders); the LLM handles judgment (drafting, triage, synthesis).
 - **Telegram** is the I/O surface — a user session for silent delivery, a bot (Grace) for interactive notifications.
-- **Google Sheets** hold CRM state; an **Obsidian vault** is the BrainOS knowledge core; **Gmail/Calendar/iMessage/Contacts** are read-only inputs (except drafts, which are written but never sent).
+- **Google Sheets** hold CRM state; an **Obsidian vault** is the degenOS knowledge core; **Gmail/Calendar/iMessage/Contacts** are read-only inputs (except drafts, which are written but never sent).
 
 No servers, no monthly fees. The trade-off: it runs while your Mac is on.
 
 ---
 
-## BrainOS
+## degenOS
 
-The OS and the knowledge core. It turns raw input into usable thinking: you drop a note, link, or voice memo; BrainOS sharpens it, files it, finds non-obvious connections to past notes, and when a theme has enough support, drafts content in your voice. It runs daily research pulses on topics you care about — and, crucially, it hosts the **daily orchestrator** (`morning`) that pulls the whole system together into one ranked dashboard. **Use it when:** you have an idea to capture, a topic to research, content to produce — or just let its morning routine run. Home: an Obsidian vault.
+The OS and the knowledge core. It turns raw input into usable thinking: you drop a note, link, or voice memo; degenOS sharpens it, files it, finds non-obvious connections to past notes, and when a theme has enough support, drafts content in your voice. It runs daily research pulses on topics you care about — and, crucially, it hosts the **daily orchestrator** (`morning`) that pulls the whole system together into one ranked dashboard. **Use it when:** you have an idea to capture, a topic to research, content to produce — or just let its morning routine run. Home: an Obsidian vault.
 
 ---
 
@@ -69,7 +69,7 @@ Your outreach operator. It reads your CRM, ranks who needs attention today, and 
 ### Daily / automatic (you rarely type these)
 | Command | Owner | What it does | When it runs |
 |---|---|---|---|
-| `morning` | BrainOS | Inbox + research + CRM scan → one ranked dashboard | 7:45 AM auto |
+| `morning` | degenOS | Inbox + research + CRM scan → one ranked dashboard | 7:45 AM auto |
 | `evening-brief` | LifeBot | Inbox triage, reply drafts, calendar prep, people nudges | 8:00 PM auto |
 | `day-schedule` | LifeBot | Time-blocks + smart phone reminders | 7:30 AM auto |
 
@@ -93,9 +93,9 @@ Your outreach operator. It reads your CRM, ranks who needs attention today, and 
 | `social-checkin` | LifeBot | Refresh contacts from LinkedIn/Facebook |
 | `wellness` | LifeBot | See your habit & time-block adherence |
 | `crm-seed` | LifeBot | First-run: build the personal CRM from your history |
-| `auto-research [topic]` | BrainOS | Deep-dive a question |
-| `think-deep [question]` | BrainOS | Structured reasoning for a hard decision |
-| `generate-brief` / `write` / `expand` / `optimize` | BrainOS | The content pipeline, stage by stage |
+| `auto-research [topic]` | degenOS | Deep-dive a question |
+| `think-deep [question]` | degenOS | Structured reasoning for a hard decision |
+| `generate-brief` / `write` / `expand` / `optimize` | degenOS | The content pipeline, stage by stage |
 
 ### Grace text commands (natural language)
 `remind me [when] to [thing]` · `capture: [note]` · `skip [block] today` · `discrete [Nh/on/off]` · `status` — plus just replying to her questions.
@@ -107,7 +107,7 @@ Your outreach operator. It reads your CRM, ranks who needs attention today, and 
 Three loops make the system improve instead of just repeat:
 
 1. **Outreach playbook** (BizBot) — every draft is tagged; replies are tracked; the win-rate by message style feeds back so the best-performing angle leads next time. Cold patterns get retired.
-2. **Content patterns** (BrainOS) — published pieces' engagement updates a "what works" file that shapes future writing. Reply-winning outreach angles also flow here as validated demand signals.
+2. **Content patterns** (degenOS) — published pieces' engagement updates a "what works" file that shapes future writing. Reply-winning outreach angles also flow here as validated demand signals.
 3. **Voice adaptation** (LifeBot) — the system compares the drafts it wrote against what you actually sent. Your edits teach it your real voice, per audience (crisp for business, warm for friends).
 
 Plus the **block ledger** (LifeBot): it watches which calendar blocks you keep, move, or delete, and adjusts — delete the gym block enough times and it stops scheduling it; consistently move it to 6pm and it adopts 6pm.
@@ -117,7 +117,7 @@ Plus the **block ledger** (LifeBot): it watches which calendar blocks you keep, 
 ## Delivery
 
 Every brief reaches you three ways so nothing is missed:
-1. **A file** saved to the BrainOS vault (searchable archive).
+1. **A file** saved to the degenOS vault (searchable archive).
 2. **Email** (full content).
 3. **Telegram** — as an **expandable digest** (each section taps open; drafts are full text, ready to copy) plus the file attached.
 
@@ -130,7 +130,7 @@ Daily briefs also get a **voice note** (free, generated on-device) so you can li
 ```
 7:25 AM   Mac wakes (so nothing is missed)
 7:30 AM   Day scheduler (LifeBot) — audit yesterday's blocks, place today's, schedule reminders
-7:45 AM   Morning dashboard (BrainOS) — top actions + pipeline delta
+7:45 AM   Morning dashboard (degenOS) — top actions + pipeline delta
 all day   Reminders fire · Grace listens (15-min command checks + instant replies)
 8:00 PM   Evening brief (LifeBot) — triage, drafts, prep, people
 Sunday    Network weave
