@@ -4,8 +4,6 @@
 
 degenOS watches your real inputs (email, calendar, messages, research) and turns them into ranked daily actions, ready-to-send drafts, and gentle reminders — then learns from what you actually do. No SaaS subscriptions, no servers. It runs on your own Mac and talks to you through Telegram.
 
-> Built as a personal command center. This repo is the **public overview** — the operational code and personal data live in private repos.
-
 ---
 
 ## What it is, in one picture
