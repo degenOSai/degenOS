@@ -2,13 +2,17 @@
 
 **Grade the wallet, not the hype.**
 
-degenOS is a read-only, Solana-first trading terminal. It grades tokens and wallets, and is built to warn you when wallets you are tracking start leaving. You read the grade and the quote; you trade in your own wallet. degenOS never holds funds, never connects a wallet, and never places a trade.
+[Try the terminal](https://cockpit.degenos.ai/terminal)
+
+![The degenOS terminal on Jupiter (JUP), showing the chart, a quote-only trade panel, and the Safety Grade](docs/terminal.png)
+
+degenOS is a read-only, Solana-first trading terminal. It grades tokens and wallets. You read the grade and the quote; you trade in your own wallet. degenOS never holds funds, never connects a wallet, and never places a trade.
 
 The product is at [degenos.ai](https://degenos.ai).
 
 ## What it does today
 
-- **Terminal** — a public, read-only cockpit for a token, linked from [degenos.ai](https://degenos.ai). It shows a chart, a Safety Grade, a quote-only trade panel, and wallet grades.
+- **Terminal** — a public, read-only cockpit for a token. Open it with [Try the terminal](https://cockpit.degenos.ai/terminal). It shows a chart, a Safety Grade, a quote-only trade panel, and wallet grades.
 - **Chart** — candlesticks, with a price line when candles are unavailable. Candle data comes from GeckoTerminal and CoinGecko.
 - **Safety Grade** — mint and freeze authority, top-10 holder concentration, and LP history, when those checks have been recorded. A mint that has not been graded is shown as incomplete, not as a pass.
 - **Quote-only trade panel** — pick a size and side to see a quote. Wallet connect and trade execution are off.
@@ -32,12 +36,13 @@ None of this predicts future returns. A high grade is not a buy signal, and a sa
 These are not live yet:
 
 - Tracked-wallet trade feed
-- Conviction badge and exit alerts — warnings when tracked wallets start leaving
+- Conviction badge and exit alerts, which will warn you when the wallets it tracks start selling
 - Access (Pass / Genesis), listed as coming soon on [degenos.ai](https://degenos.ai)
 
 ## Links
 
 - Product: [degenos.ai](https://degenos.ai)
+- [Try the terminal](https://cockpit.degenos.ai/terminal)
 - X: [@degenOS_ai](https://x.com/degenOS_ai)
 
 ## Not financial advice
