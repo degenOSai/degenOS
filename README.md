@@ -1,76 +1,49 @@
-# 🧠 degenOS
+# degenOS
 
-**A personal operating system: one knowledge core, one interface agent, and two domain agents — that you run from your phone.**
+**Grade the wallet, not the hype.**
 
-degenOS watches your real inputs (email, calendar, messages, research) and turns them into ranked daily actions, ready-to-send drafts, and gentle reminders — then learns from what you actually do. No SaaS subscriptions, no servers. It runs on your own Mac and talks to you through Telegram.
+degenOS is a read-only, Solana-first trading terminal. It grades tokens and wallets, and is built to warn you when wallets you are tracking start leaving. You read the grade and the quote; you trade in your own wallet. degenOS never holds funds, never connects a wallet, and never places a trade.
 
----
+The product is at [degenos.ai](https://degenos.ai).
 
-## What it is, in one picture
+## What it does today
 
-![System architecture](diagrams/architecture.svg)
+- **Terminal** — a public, read-only cockpit for a token, linked from [degenos.ai](https://degenos.ai). It shows a chart, a Safety Grade, a quote-only trade panel, and wallet grades.
+- **Chart** — candlesticks, with a price line when candles are unavailable. Candle data comes from GeckoTerminal and CoinGecko.
+- **Safety Grade** — mint and freeze authority, top-10 holder concentration, and LP history, when those checks have been recorded. A mint that has not been graded is shown as incomplete, not as a pass.
+- **Quote-only trade panel** — pick a size and side to see a quote. Wallet connect and trade execution are off.
+- **Wallet grader** — grades a wallet on what a copier could have received after a delay, net of a modeled 0.75% platform fee per side plus 0.0035 SOL, and a measured (or fallback) round-trip cost. Coverage gates fail closed when the sample or the measured-cost share is too thin.
+- **Callers board** — public caller receipts, so you can inspect the record behind a call.
 
-*degenOS is the OS and the knowledge core. Grace is how you talk to it. LifeBot and BizBot are the two domain agents. Everything runs automatically on your Mac; you interact through Telegram.*
+On-chain reads use Alchemy RPC. The 0.75% platform fee is modeled in the grader; fee collection is not on.
 
-### The hierarchy
+## How grades work
 
-| # | Component | Role |
-|---|---|---|
-| 1 | 🧠 **degenOS** | **The OS.** The knowledge core and daily orchestrator — captures ideas and research, finds connections, drafts content, and runs the routine that produces your daily dashboard. Lives in an Obsidian vault. |
-| 2 | 📱 **Grace** | **The interface.** The Telegram agent you talk to — asks you one-tap questions, takes commands by text, sends notifications. |
-| 3 | 🌙 **LifeBot** | **Life agent.** Triages your inboxes, manages your calendar, maintains a personal CRM of the people in your life, and protects your time. |
-| 4 | 💼 **BizBot** | **Business agent.** Runs your outreach CRM, ranks who to contact, writes personalized drafts, tracks what gets replies. |
+Grades are models with priors, not guarantees, and they are not financial advice.
 
----
+**Token Safety Grade** looks at on-chain facts: whether mint and freeze authority are revoked, how concentrated the top 10 holders are, and any recorded LP add/remove history. Missing data stays visible. Incomplete is not a pass.
 
-## A day in the life
+**Wallet grades** ask a narrower question than whether the wallet itself made money: what would a later copier have received, after a delay, net of fees and friction? Entries use a delay floor and, when enough receipts exist, a measured lag. Buys with no usable forward price, and wallets whose coverage is too thin, fail closed instead of being filled in with optimistic assumptions. When a measured round-trip cost is missing, a conservative fallback is used, and a wallet is not treated as publishable if that fallback is carrying the result.
 
-![Daily and weekly flow](diagrams/daily-flow.svg)
+None of this predicts future returns. A high grade is not a buy signal, and a safety check that passes is not a claim the token is safe.
 
-*You don't "use" degenOS so much as receive it. The schedule does the work; you act on what arrives and answer the occasional question from Grace.*
+## In progress
 
-**Your entire daily involvement:** read the morning dashboard (or listen to the voice note), work the top actions by copy-pasting drafts, glance at the evening brief, and reply to Grace when she asks something. ~10 minutes of decisions; the system does the rest.
+These are not live yet:
 
----
+- Tracked-wallet trade feed
+- Conviction badge and exit alerts — warnings when tracked wallets start leaving
+- Access (Pass / Genesis), listed as coming soon on [degenos.ai](https://degenos.ai)
 
-## How it gets smarter
+## Links
 
-![Data flow between components](diagrams/data-flow.svg)
+- Product: [degenos.ai](https://degenos.ai)
+- X: [@degenOS_ai](https://x.com/degenOS_ai)
 
-*The components feed each other. Your research personalizes your outreach. Your outreach results teach the system which angles work. The people you actually reply to shape who it reminds you about. Every week compounds.*
+## Not financial advice
 
----
-
-## The two-minute pitch
-
-Most "AI assistants" are a chat box you have to remember to open. degenOS is the opposite: it's **always running, acts in the tools you already use, and only interrupts you when it needs a decision.** It drafts the email and leaves it in your Drafts folder. It schedules the reminder and it fires at the right moment. It notices you've lost touch with a friend and hands you an opener. It asks "did this deal move?" and files your answer in the right place automatically.
-
-It's split into a core plus specialized agents because **knowledge, life, and business are different jobs** — but they share context, so a news item the core saved this morning can sharpen a sales message this afternoon.
-
----
-
-## Documentation
-
-- 📘 **[Quickstart](guide/quickstart.md)** — the daily & weekly rhythm, one page.
-- 📗 **[Full Manual](guide/manual.md)** — every command, when to use it, how it works, troubleshooting.
-- 🗺️ **[Diagrams](diagrams/)** — architecture, daily flow, data flow.
-
----
-
-## Design principles
-
-1. **Propose, don't auto-send.** Drafts wait for your approval. The system never speaks to anyone as you without you hitting send.
-2. **One source of truth per thing.** The CRM sheet is the CRM; the vault is the knowledge; no duplicated state that can drift.
-3. **Graceful degradation.** Any integration can be offline and the rest keeps working.
-4. **Learn from outcomes, not opinions.** It measures what you actually sent and kept, and adapts.
-5. **Privacy first.** Personal data stays on your machine and in your private accounts. This public repo contains none of it.
-
----
+degenOS is a read-only terminal. It does not execute trades, hold assets, or connect a wallet. Grades and quotes are information, not advice. Trading new tokens is high risk; you can lose everything you put in.
 
 ## License
 
 Released under the MIT License. See [LICENSE](LICENSE) for the full text.
-
----
-
-*degenOS is a personal project. The overview here is shared to show the architecture and ideas; the operational code and all personal data are private.*
